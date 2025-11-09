@@ -14,10 +14,10 @@ public class FindFirstElement {
 
         //first even number from a stream
         List<Integer> numbers = Arrays.asList(3, 7, 2, 9, 4, 6);
-        Integer firstEven = numbers.stream().filter(n -> n%2==0).findFirst().orElse(null);
+        Integer firstEven = numbers.stream().filter(n -> n % 2 == 0).findFirst().orElse(null);
         System.out.println("First even number: " + firstEven);
 
-        Integer firstEven1 = numbers.stream().filter(n ->n%2==0).reduce((a,b) -> a).orElse(null);
+        Integer firstEven1 = numbers.stream().filter(n -> n % 2 == 0).reduce((a, b) -> a).orElse(null);
         System.out.println("First even number using reduce: " + firstEven1);
 
     }
