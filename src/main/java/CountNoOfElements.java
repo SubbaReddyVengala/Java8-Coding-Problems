@@ -13,7 +13,7 @@ public class CountNoOfElements {
         long count2 = numbers.stream().collect(Collectors.counting());
         System.out.println("Total number of elements using Collectors.counting(): " + count2);
 
-        long count3 = numbers.stream().map(n -> 1).reduce(0,Integer::sum);
+        long count3 = numbers.stream().map(n -> 1).reduce(0, Integer::sum);
         System.out.println("Total number of elements using map and reduce: " + count3);
     }
 }
