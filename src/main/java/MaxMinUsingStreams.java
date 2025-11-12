@@ -8,12 +8,12 @@ public class MaxMinUsingStreams {
 
         // Finding maximum value using reduce
         int max = numbers.stream()
-                         .reduce(Integer.MIN_VALUE, (a, b) -> a > b ? a : b);
+                .reduce(Integer.MIN_VALUE, (a, b) -> a > b ? a : b);
         System.out.println("Maximum value: " + max);
 
         // Finding minimum value using reduce
         int min = numbers.stream()
-                         .reduce(Integer.MAX_VALUE, (a, b) -> a < b ? a : b);
+                .reduce(Integer.MAX_VALUE, (a, b) -> a < b ? a : b);
         System.out.println("Minimum value: " + min);
 
         int max1 = numbers.stream().max(Comparator.naturalOrder()).get();
@@ -22,12 +22,11 @@ public class MaxMinUsingStreams {
         int min1 = numbers.stream().min(Comparator.naturalOrder()).get();
         System.out.println("Minimum value using min(): " + min1);
 
-        int max2 = numbers.stream().max((a,b) -> a.compareTo(b)).get();
+        int max2 = numbers.stream().max((a, b) -> a.compareTo(b)).get();
         System.out.println("Maximum value using custom comparator: " + max2);
 
-        int min2 = numbers.stream().min((a,b) -> a.compareTo(b)).get();
+        int min2 = numbers.stream().min((a, b) -> a.compareTo(b)).get();
         System.out.println("Minimum value using custom comparator: " + min2);
-
 
 
     }
