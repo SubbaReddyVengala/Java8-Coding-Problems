@@ -12,8 +12,8 @@ public class SortMapByValues {
         map.put("kavi",32);
         map.put("balu",22);
 
-
-        Map<String, Integer> sorted = map.entrySet().stream()
+        Map<String, Integer> sortedMap = map.entrySet()
+                .stream()
                 .sorted(Map.Entry.comparingByValue())
                 .collect(Collectors.toMap(
                         Map.Entry::getKey,
@@ -21,9 +21,18 @@ public class SortMapByValues {
                         (e1, e2) -> e1,
                         LinkedHashMap::new
                 ));
-        System.out.println("Sorted Map: " + sorted
-        );
+         System.out.println("Sorted Map by Values: " + sortedMap);
         //Solution 2: Sort in Reverse Order
+        Map<String, Integer> reverseSortedMap = map.entrySet()
+                .stream()
+                .sorted(Map.Entry.<String, Integer>comparingByValue().reversed())
+                .collect(Collectors.toMap(
+                        Map.Entry::getKey,
+                        Map.Entry::getValue,
+                        (e1, e2) -> e1,
+                        LinkedHashMap::new
+                ));
+        System.out.println("Reverse Sorted Map by Values: " + reverseSortedMap);
         //Solution 3: Using TreeMap with Custom Comparator
 
 
